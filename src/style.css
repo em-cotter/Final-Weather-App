@@ -17,6 +17,19 @@ h2{
     padding-top: 5px;
     font-size: 20px;
     opacity: 0.6;
+  
+}
+ul{
+    text-align: center;
+    
+
+}
+li{
+    list-style: none;
+    padding:5px;
+    padding-right: 15px;
+    
+    
 }
 
 .wrapper{
@@ -27,7 +40,11 @@ h2{
   border-radius: 5px;
 }
 
-
+  .time{
+      text-align: center;
+      padding-top: 5px;
+      padding-bottom: 10px;
+  } 
 .weekday{
     font-weight: bold;
     color: #B8C2CF;
