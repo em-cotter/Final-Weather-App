@@ -41,7 +41,7 @@ function showWeather(response) {
   highTemp.innerHTML = `High: ${roundHighTemp}°C`;
 
   let wind = document.querySelector(`#wind`);
-  let windRound = Math.round(response.data.wind.speed);
+  let windRound = Math.round(response.data.wind.speed*3.6);
   wind.innerHTML = `Wind: ${windRound} km/h`;
 
   let humidity = document.querySelector(`#humidity`);
