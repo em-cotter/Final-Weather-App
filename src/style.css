@@ -91,4 +91,12 @@ padding: 20px, 5px;
   margin-bottom: 40px;
   font-size: small;
   padding-top: 2px;
+  color:#2B394F;
+  
 } 
+.gitlink{
+    color: #6E88A1;
+}
+.gitlink:hover{
+    color: #2B394F;
+}
