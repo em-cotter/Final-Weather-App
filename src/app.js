@@ -16,7 +16,7 @@ let days = [
 let day = days[now.getDay()];
 
 function minute() {
-  if (`minutes` <= 9) {
+  if (minutes < 10) {
     date.innerHTML = `${day} ${hours}:0${minutes}`;
   } else {
     date.innerHTML = `${day} ${hours}:${minutes}`;
@@ -51,7 +51,7 @@ function showWeather(response) {
 function handleSubmit(event) {
   event.preventDefault();
   let input = document.querySelector("#inputPassword");
-  city.innerHTML = ` ${input.value}`;
+  city.innerHTML = `${input.value}`;
 
   let apiKey = "30b4b8df96ab8adabf4f389d73097df8";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${apiKey}&units=metric`;
