@@ -2,8 +2,7 @@
 body{
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
-  background: #DDE8E7;
-  
+  background: #DDDDDD;
    }
 form{
     text-align: center;
@@ -53,23 +52,36 @@ li{
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
-  background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(110, 136, 161) 90.2%);;
+  background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(110, 136, 161) 90.2%);
 }
  button.location{
     background-color:#6E88A1 ;
     border-color: #fff;
-    
+    transition-duration:0.4s ;
 }
 button.location:hover{
-    background-color: #546D8C;}
+    background-color: #546D8C;
+
+}
+
+    button.location:focus{
+ background-color: #546D8C;
+ 
+}
+    
 
 button.search{
   background-color: #6E88A1;
-    border-color: #fff;  
+    border-color: #fff;
+    transition-duration: 0.4s; 
+    
 }
 button.search:hover{
     background-color: #546D8C;
 }
+button.search:focus{
+     background-color: #546D8C;}
+
 .time{
       text-align: center;
       padding-top: 5px;
