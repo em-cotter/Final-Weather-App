@@ -2,6 +2,8 @@
 body{
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
+  background: #EDEDED;
+  color: #2B394F;
    }
 form{
     text-align: center;
@@ -10,7 +12,7 @@ form{
 h1{
  text-align: center; 
  border-radius: 50%;
-    border: 1px solid #407088;
+    border: 1px solid #546D8C;
     width: 110px;
     height: 110px;
     margin: 20px auto; 
@@ -35,9 +37,12 @@ ul{
 li{
     list-style: none;
     padding:5px;
-    padding-right: 15px;
+    padding-right: 28px;
     
     
+}
+strong{
+    color: #2B394F;
 }
 
 .wrapper{
@@ -47,9 +52,10 @@ li{
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(110, 136, 161) 90.2%);;
 }
  button.location{
-    background-color:#28476E ;
+    background-color:#6E88A1 ;
     border-color: #fff;
     
 }
@@ -57,7 +63,7 @@ button.location:hover{
     background-color: #546D8C;}
 
 button.search{
-  background-color: #28476E;
+  background-color: #6E88A1;
     border-color: #fff;  
 }
 button.search:hover{
@@ -71,11 +77,11 @@ button.search:hover{
   } 
 .weekday{
     font-weight: bold;
-    color: #B8C2CF;
+    color: #DDDDDD;
     font-size: 19px;
 }
 .frame{
-    border: 1px solid #407088;
+    border: 1px solid #546D8C;
 border-radius: 4px;
 padding: 20px, 5px;
 }
