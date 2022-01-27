@@ -27,7 +27,9 @@ let form = document.querySelector("form");
 let city = document.querySelector("#changeCity");
 
 function showWeather(response) {
-  //console.log(response.data)
+  
+  let city = document.querySelector("#changeCity");
+  city.innerHTML=`${response.data.name}`
   let temp = document.querySelector(`#current-temp`);
   let roundTemp = Math.round(response.data.main.temp);
   temp.innerHTML = `${roundTemp}°C`;
