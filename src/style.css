@@ -37,13 +37,13 @@ ul{
 li{
     list-style: none;
     padding:5px;
-    padding-right: 28px;
-    
-    
-}
-strong{
+    padding-left: 40px;
     color: #2B394F;
+    font-weight:  400;
+    text-align: left;
+    
 }
+
 
 .wrapper{
     max-width: 600px;
@@ -84,6 +84,7 @@ button.search:hover{
     border: 1px solid #546D8C;
 border-radius: 4px;
 padding: 20px, 5px;
+font-weight: 400;
 }
 .source{
    max-width: 600px;

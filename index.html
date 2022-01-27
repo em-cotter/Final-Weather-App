@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="src/style.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
 <body>
@@ -23,10 +24,10 @@
 </form> 
 <br>
   
-      <h1>
+      <h1 id="current-temp">
        -5°C 
    </h1> 
-   <h2>
+   <h2 id="changeCity">
        Cologne
    </h2>
   
@@ -34,25 +35,25 @@
        Thursday 12:15 
        </div>
    <div class="row ">
-   <div class="col-6">
+  <div class="col-6 ">
        <ul>
-           <li>
-            <strong>High:</strong> 0°C  
+           <li id="high">
+           High: 0°C  
            </li>
-           <li>
-               <strong>Low:</strong> -5°C
+           <li id="low">
+              Low: -5°C
            </li>
        </ul>
 
    </div>
-   <div class="col-6">
+   <div class="col-6 ">
        <ul>
-           <li>
-               <strong>Humidity:</strong> 80%
+           <li id="humidity">
+               Humidity: 80%
                </li>
-               <li>
-               <strong>Wind:</strong> 5km/h
-           </li>
+               <li id="wind">
+              Wind: 5km/h
+           </li >
        </ul>
 
    </div>
