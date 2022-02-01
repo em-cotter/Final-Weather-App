@@ -76,3 +76,13 @@ function getPosition(position) {
 
 let currentLocation = document.querySelector(`#current-location`);
 currentLocation.addEventListener("click", getPosition);
+
+function showFahrenheit(event){
+  event.preventDefault();
+  let fahrenheitTemp= (14 * 9/5) + 32 ;
+let temp = document.querySelector(`#current-temp`);
+temp.innerHTML=`${Math.round(fahrenheitTemp)}°F`
+}
+
+let fahrenheitLink= document.querySelector("#fahrenheit-link")
+fahrenheitLink.addEventListener("click", showFahrenheit)
