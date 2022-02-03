@@ -23,8 +23,6 @@ function minute() {
   }
 }
 minute();
-let form = document.querySelector("form");
-let city = document.querySelector("#changeCity");
 
 function showWeather(response) {
   
@@ -50,17 +48,22 @@ function showWeather(response) {
   let humidityRound = Math.round(response.data.main.humidity);
   humidity.innerHTML = `Humidity: ${humidityRound}%`;
 }
+
+function search(city){
+  let apiKey = "30b4b8df96ab8adabf4f389d73097df8";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(showWeather);
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   let input = document.querySelector("#inputPassword");
   city.innerHTML = `${input.value}`;
-
-  let apiKey = "30b4b8df96ab8adabf4f389d73097df8";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${apiKey}&units=metric`;
-  axios.get(url).then(showWeather);
+search (input.value)
+  
 }
 
-form.addEventListener("submit", handleSubmit);
+
 
 function useLocation(position) {
   let lat = position.coords.latitude;
@@ -93,6 +96,10 @@ function showCelcius(event){
   let temp = document.querySelector(`#current-temp`);
   temp.innerHTML = `${roundCelciusTemp}°C`
 }
+let form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
+let city = document.querySelector("#changeCity");
+
 
 let roundCelciusTemp= null;
 
@@ -101,3 +108,5 @@ fahrenheitLink.addEventListener("click", showFahrenheit)
 
 let celciusLink=document.querySelector("#celcius-link")
 celciusLink.addEventListener("click", showCelcius)
+
+search("Cologne")

@@ -43,21 +43,25 @@ li{
     text-align: left;
     
 }
-
-.active{
-  color:#2B394F;
-  cursor: default;
-  text-decoration: none;
-}
-.active:hover{
+a{
     text-decoration: none;
-    color:#2B394F;
+    color: #6E88A1;
 }
 
 .units{
     text-align: center;
     display: block;
 }
+.active{
+  color:#2B394F;
+  cursor: default;
+ text-decoration: none;
+}
+.active:hover{
+    text-decoration: none;
+    color:#2B394F;
+}
+
 .wrapper{
     max-width: 600px;
   margin: 30px auto;
