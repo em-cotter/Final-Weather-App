@@ -24,6 +24,28 @@ function minute() {
 }
 minute();
 
+function displayForecast(){
+  let forecastElement= document.querySelector("#forecast")
+  let forecastHTML = "";
+
+let weekdays= ["Thu", "Fri", "Sun"]
+weekdays.forEach(function (day) {
+  forecastHTML =  
+`<div class="weekday">${day}</div>
+        <div class="row frame">
+       <div class="col-3">High:0°C</div>
+       <div class="col-3 ">Rainfall:17%</div>
+       <div class="col-3">Low:-5°C</div>
+       <div class="col-3">Wind:5 km/h</div>
+   </div>     
+  </div>
+  
+<br/>`
+});
+  forecastElement.innerHTML= forecastHTML
+ 
+}
+
 function showWeather(response) {
   
   let city = document.querySelector("#changeCity");
@@ -110,3 +132,4 @@ let celciusLink=document.querySelector("#celcius-link")
 celciusLink.addEventListener("click", showCelcius)
 
 search("Cologne")
+displayForecast()
