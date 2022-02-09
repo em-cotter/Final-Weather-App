@@ -24,13 +24,14 @@ function minute() {
 }
 minute();
 
-function displayForecast(){
+function displayForecast(response){
+  console.log(response)
   let forecastElement= document.querySelector("#forecast")
   let forecastHTML = "";
 
-let weekdays= ["Thu", "Fri", "Sun"]
+let weekdays= ["Thu", "Fri", "Sat","Sun","Mon"]
 weekdays.forEach(function (day) {
-  forecastHTML =  
+  forecastHTML =  forecastHTML +=
 `<div class="weekday">${day}</div>
         <div class="row frame">
        <div class="col-3">High:0°C</div>
@@ -39,11 +40,19 @@ weekdays.forEach(function (day) {
        <div class="col-3">Wind:5 km/h</div>
    </div>     
   </div>
-  
 <br/>`
 });
   forecastElement.innerHTML= forecastHTML
  
+}
+
+function getForecast(coordinates){
+console.log(coordinates)
+let apiKey = "30b4b8df96ab8adabf4f389d73097df8";
+let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
+
+console.log(apiUrl)
+axios.get(apiUrl).then(displayForecast)
 }
 
 function showWeather(response) {
@@ -69,6 +78,8 @@ function showWeather(response) {
   let humidity = document.querySelector(`#humidity`);
   let humidityRound = Math.round(response.data.main.humidity);
   humidity.innerHTML = `Humidity: ${humidityRound}%`;
+
+  getForecast(response.data.coord)
 }
 
 function search(city){
@@ -132,4 +143,3 @@ let celciusLink=document.querySelector("#celcius-link")
 celciusLink.addEventListener("click", showCelcius)
 
 search("Cologne")
-displayForecast()
