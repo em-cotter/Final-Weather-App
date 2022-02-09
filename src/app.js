@@ -121,22 +121,10 @@ function getPosition(position) {
 let currentLocation = document.querySelector(`#current-location`);
 currentLocation.addEventListener("click", getPosition);
 
-function showFahrenheit(event){
-  event.preventDefault();
-  let fahrenheitTemp= (roundCelciusTemp * 9/5) + 32 ;
-  celciusLink.classList.remove("active")
-  fahrenheitLink.classList.add("active")
-let temp = document.querySelector(`#current-temp`);
-temp.innerHTML=`${Math.round(fahrenheitTemp)}°F`
-}
 
-function showCelcius(event){
-  event.preventDefault()
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temp = document.querySelector(`#current-temp`);
-  temp.innerHTML = `${roundCelciusTemp}°C`
-}
+
+
+
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 let city = document.querySelector("#changeCity");
@@ -144,10 +132,8 @@ let city = document.querySelector("#changeCity");
 
 let roundCelciusTemp= null;
 
-let fahrenheitLink= document.querySelector("#fahrenheit-link")
-fahrenheitLink.addEventListener("click", showFahrenheit)
 
-let celciusLink=document.querySelector("#celcius-link")
-celciusLink.addEventListener("click", showCelcius)
+
+
 
 search("Cologne")
