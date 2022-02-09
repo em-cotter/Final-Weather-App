@@ -24,30 +24,38 @@ function minute() {
 }
 minute();
 
+function formatDay(timestamp){
+let date= new Date(timestamp * 10000);
+let day= date.getDay()
+  let days=["Sun", "Mon","Tue","Wed","Thu","Fri","Sat"];
+return days[day]
+}
+
 function displayForecast(response){
-  console.log(response)
+  let forecast=response.data.daily
   let forecastElement= document.querySelector("#forecast")
   let forecastHTML = "";
 
-let weekdays= ["Thu", "Fri", "Sat","Sun","Mon"]
-weekdays.forEach(function (day) {
+
+forecast.forEach(function (forecastDay, index) {
+  if (index<5){
   forecastHTML =  forecastHTML +=
-`<div class="weekday">${day}</div>
+`<div class="weekday">${formatDay(forecastDay.dt)}</div>
         <div class="row frame">
-       <div class="col-3">High:0°C</div>
-       <div class="col-3 ">Rainfall:17%</div>
-       <div class="col-3">Low:-5°C</div>
-       <div class="col-3">Wind:5 km/h</div>
+       <div class="col-3">High:${Math.round(forecastDay.temp.max)}°C</div>
+       <div class="col-4 ">Humidity:${Math.round(forecastDay.humidity)}%</div>
+       <div class="col-2">Low:${Math.round(forecastDay.temp.min)}°C</div>
+       <div class="col-3">Wind:${Math.round(forecastDay.wind_speed*3.6)}km/h</div>
    </div>     
   </div>
-<br/>`
+<br/>`}
 });
   forecastElement.innerHTML= forecastHTML
  
 }
 
 function getForecast(coordinates){
-console.log(coordinates)
+
 let apiKey = "30b4b8df96ab8adabf4f389d73097df8";
 let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
 
