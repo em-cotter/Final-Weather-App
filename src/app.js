@@ -25,7 +25,7 @@ function minute() {
 minute();
 
 function formatDay(timestamp){
-let date= new Date(timestamp * 10000);
+let date= new Date(timestamp*1000 );
 let day= date.getDay()
   let days=["Sun", "Mon","Tue","Wed","Thu","Fri","Sat"];
 return days[day]
@@ -59,7 +59,7 @@ function getForecast(coordinates){
 let apiKey = "30b4b8df96ab8adabf4f389d73097df8";
 let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
 
-console.log(apiUrl)
+
 axios.get(apiUrl).then(displayForecast)
 }
 
